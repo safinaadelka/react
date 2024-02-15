@@ -1,5 +1,6 @@
-import "./Header.css";
-import "././Header.css";
+import "../Header/Header.css";
+import "./Footer.css";
+
 import HeaderLogo from "/public/header/header_logo.png";
 import Line from "/public/header/line.png";
 import Lupa from "/public/header/lupa.png";
@@ -27,16 +28,10 @@ export default function Header() {
               информация
             </a>
           </nav>
-          <div className="header_actions">
-            <a href="">
-              <img src={Lupa} alt="" />
-            </a>
-            <a href="">
-              <img src={Bag} alt="" />
-            </a>
-            <a href="">
-              <img src={Likes} alt="" />
-            </a>
+          <div className="footer_contacts">
+              <a href="" className="h_link">г. кАЗАНЬ, УЛ. бали галеева 3а </a>
+              <a href="" className="h_link">+7 (927) 482-09-82</a>
+              <a href="" className="h_link">Kuzmakolom@gMAIL.RU</a>
           </div>
         </div>
       </div>

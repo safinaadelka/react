@@ -1,0 +1,41 @@
+.name{
+    font-family: Montserrat;
+    font-size: 30px;
+    font-weight: 400;
+    font-family: "Inter", sans-serif;
+    padding: 0 25px;
+    line-height: 100%;
+}
+
+.price{
+    font-family: Montserrat;
+    font-size: 30px;
+    font-weight: 400;
+    font-family: "Inter", sans-serif;
+}
+button{
+    border: none;
+}
+.foto{
+    height: 449px;
+    width: 384px;
+}
+.actions{
+    display: flex;
+    gap: 14px;
+    align-items: center;
+
+}
+.card_actions{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 25px;
+    align-items: center;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: flex-start;
+    max-width: 384px;
+}
