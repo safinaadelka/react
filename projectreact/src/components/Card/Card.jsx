@@ -3,10 +3,10 @@ import Heart from "/public/card/heart.png";
 import Bag from "/public/card/black_bag.png";
 import Foto from "/public/card/card_foto.jpg";
 
-export default function Card({name, price, foto}) {
+export default function Card({name, price}) {
   return (
     <div className="card">
-      <img src={foto} alt="Product" className="foto" />
+      <img src={Foto} alt="Product" className="foto" />
 
       <h3 className="name">{name}</h3>
       <div className="card_actions">

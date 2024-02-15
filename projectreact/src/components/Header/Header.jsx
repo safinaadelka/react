@@ -5,6 +5,7 @@ import Line from "/public/header/line.png";
 import Lupa from "/public/header/lupa.png";
 import Bag from "/public/header/korz.png";
 import Likes from "/public/header/likes.png";
+import {Link} from 'react-router-dom'; 
 
 export default function Header() {
   return (
@@ -16,12 +17,12 @@ export default function Header() {
               <img src={HeaderLogo} alt="" className="logo" />
             </a>
             <img src={Line} alt="" />
-            <a href="/" className="h_link">
+            <Link to="/" className="h_link">
               главная
-            </a>
-            <a href="/catalog" className="h_link">
+            </Link>
+            <Link to="/catalog" className="h_link">
               каталог
-            </a>
+            </Link>
             <img src={Line} alt="" />
             <a href="" className="h_link">
               информация

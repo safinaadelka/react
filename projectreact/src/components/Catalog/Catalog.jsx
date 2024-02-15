@@ -3,11 +3,12 @@ import "././Catalog.css";
 import Foto1 from "/public/card/card_foto.jpg";
 import Foto2 from "/public/card/foto2.png";
 import Foto3 from "/public/card/foto3.png";
+import { catalog } from "../../data";
 
 export default function Catalog() {
   return (
     <div className="catalog_cards">
-      <br /> <br />       <br /> <br />
+      <br /> <br /> <br /> <br />
       <div className="container">
         <p className="catalog_name">Главная \ Каталог</p>
         <br />
@@ -27,19 +28,11 @@ export default function Catalog() {
         </div>
         <br /> <br />
         <div className="cards">
-          <Card name="название товара 1" price="1500" foto={Foto1} />
-          <Card name="название товара 2" price="1233" foto={Foto2} />
-          <Card name="название товара 3" price="3200" foto={Foto3} />
-          <Card name="название товара 4" price="155" foto={Foto1} />
-          <Card name="название товара 5" price="166" foto={Foto2} />
-          <Card name="название товара 6" price="166" foto={Foto3} />
-          <Card name="название товара 7" price="1999" foto={Foto1} />
-          <Card name="название товара 8" price="1250" foto={Foto2} />
-          <Card name="название товара 9" price="4999" foto={Foto3} />
+          {catalog.map((card) => {
+            return <Card name={card.name} price={card.price} />;
+          })}
         </div>
-
-
-        <br /> <br />       <br /> <br />       <br /> <br />      <br /> <br />
+        <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
       </div>
     </div>
   );

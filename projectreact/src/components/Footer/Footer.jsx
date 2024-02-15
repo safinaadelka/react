@@ -1,5 +1,7 @@
 import "../Header/Header.css";
 import "./Footer.css";
+import {Link} from 'react-router-dom'; 
+
 
 import HeaderLogo from "/public/header/header_logo.png";
 import Line from "/public/header/line.png";
@@ -17,12 +19,12 @@ export default function Header() {
               <img src={HeaderLogo} alt="" className="logo" />
             </a>
             <img src={Line} alt="" />
-            <a href="/" className="h_link">
+            <Link to="/" className="h_link">
               главная
-            </a>
-            <a href="/catalog" className="h_link">
+            </Link>
+            <Link to="/catalog" className="h_link">
               каталог
-            </a>
+            </Link>
             <img src={Line} alt="" />
             <a href="" className="h_link">
               информация
