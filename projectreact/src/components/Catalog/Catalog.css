@@ -28,3 +28,10 @@ gap: 30px;
     font-size: 20px;
     font-weight: 200;
 }
+input[type="search"]{
+    height: 50px;
+    font-size: 18px;
+    color: #181818;
+    padding: 10px 20px;
+
+}

@@ -4,8 +4,19 @@ import Foto1 from "/public/card/card_foto.jpg";
 import Foto2 from "/public/card/foto2.png";
 import Foto3 from "/public/card/foto3.png";
 import { catalog } from "../../data";
+import { useState } from 'react'; 
 
 export default function Catalog() {
+  const[query, setQuery] = useState("")
+
+
+  function search (e){
+    setQuery(e.target.value)
+  }
+
+
+  const filterProducts = catalog.filter((item) => item.name.toLowerCase().includes(query.toLowerCase()))
+
   return (
     <div className="catalog_cards">
       <br /> <br /> <br /> <br />
@@ -27,10 +38,22 @@ export default function Catalog() {
           </a>
         </div>
         <br /> <br />
+        <input onChange={search} type="search" name="search" placeholder="Find me" />
+        <br /> <br />      <br /> <br />
         <div className="cards">
-          {catalog.map((card, index) => {
+          {
+            filterProducts.length ?
+
+          filterProducts.map((card, index) => {
             return <Card key={index} {...card} />;
-          })}
+          })
+        : 
+        
+
+        <h2>Nothing is find by your find search</h2>
+
+ 
+        }
         </div>
         <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
       </div>
