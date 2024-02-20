@@ -39,3 +39,10 @@ button{
     justify-content: flex-start;
     max-width: 384px;
 }
+.link{
+    font-size: 18px;
+    color: brown;
+    font-weight: 600;
+    text-align: center;
+    font-family: "Inter", sans-serif;
+}

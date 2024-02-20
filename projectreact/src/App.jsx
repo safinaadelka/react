@@ -7,7 +7,9 @@ import Banner from './components/Banner/Banner'
 import Footer from './components/Footer/Footer'
 
 import CatalogPage from './Pages/Catalog/Catalog'
+import CardPage from './Pages/CardPage/CardPage'
 import {Routes, Route} from 'react-router-dom'
+
 
 function App() {
   const [count, setCount] = useState(0)
@@ -19,6 +21,7 @@ function App() {
     <Routes>
       <Route path="/catalog" element = {<CatalogPage/>} />
       <Route path="/" element={<Banner />} /> {/* Переместите Banner внутрь маршрута "/" */}
+      <Route path="/catalog/:id" element = {<CardPage/>} />
     </Routes>
     <Footer />
     </>

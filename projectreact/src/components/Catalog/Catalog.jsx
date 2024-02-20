@@ -28,8 +28,8 @@ export default function Catalog() {
         </div>
         <br /> <br />
         <div className="cards">
-          {catalog.map((card) => {
-            return <Card name={card.name} price={card.price} />;
+          {catalog.map((card, index) => {
+            return <Card key={index} {...card} />;
           })}
         </div>
         <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
