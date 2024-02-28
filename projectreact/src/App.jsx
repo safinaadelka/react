@@ -8,6 +8,7 @@ import Footer from './components/Footer/Footer'
 
 import CatalogPage from './Pages/Catalog/Catalog'
 import CardPage from './Pages/CardPage/CardPage'
+import UsersPage from './Pages/UsersPage/UsersPage'
 import {Routes, Route} from 'react-router-dom'
 
 
@@ -22,6 +23,7 @@ function App() {
       <Route path="/catalog" element = {<CatalogPage/>} />
       <Route path="/" element={<Banner />} /> {/* Переместите Banner внутрь маршрута "/" */}
       <Route path="/catalog/:id" element = {<CardPage/>} />
+      <Route path="/users" element = {<UsersPage />} />
     </Routes>
     <Footer />
     </>

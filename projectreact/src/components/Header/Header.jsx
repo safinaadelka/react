@@ -24,9 +24,10 @@ export default function Header() {
               каталог
             </Link>
             <img src={Line} alt="" />
-            <a href="" className="h_link">
-              информация
-            </a>
+            <Link to="/" className="h_link">информация</Link>
+            <Link to="/users" className="h_link">
+              ПОЛЬЗОВАТЕЛИ
+            </Link>
           </nav>
           <div className="header_actions">
             <a href="">
