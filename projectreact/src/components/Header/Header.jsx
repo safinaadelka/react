@@ -28,6 +28,7 @@ export default function Header() {
             <Link to="/users" className="h_link">
               ПОЛЬЗОВАТЕЛИ
             </Link>
+            <Link to="/create" className="h_link">ДОБАВЛЕНИЕ</Link>
           </nav>
           <div className="header_actions">
             <a href="">

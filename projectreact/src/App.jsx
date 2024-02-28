@@ -9,6 +9,7 @@ import Footer from './components/Footer/Footer'
 import CatalogPage from './Pages/Catalog/Catalog'
 import CardPage from './Pages/CardPage/CardPage'
 import UsersPage from './Pages/UsersPage/UsersPage'
+import CreatePage from './Pages/CreatePage/CreatePage'
 import {Routes, Route} from 'react-router-dom'
 
 
@@ -24,6 +25,7 @@ function App() {
       <Route path="/" element={<Banner />} /> {/* Переместите Banner внутрь маршрута "/" */}
       <Route path="/catalog/:id" element = {<CardPage/>} />
       <Route path="/users" element = {<UsersPage />} />
+      <Route path="/create" element = {<CreatePage />} />
     </Routes>
     <Footer />
     </>
