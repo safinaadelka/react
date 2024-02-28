@@ -1,11 +1,27 @@
 import "././Card.css";
 import Heart from "/public/card/heart.png";
 import Bag from "/public/card/black_bag.png";
+import Button from '../../components/Button/Button'
 import Foto from "/public/card/card_foto.jpg";
-import {Link} from 'react-router-dom'; 
+import { Link, useParams } from 'react-router-dom'
+import React, { useState } from 'react';
+import {catalog} from '../../data'
+import Modal from 'react-modal';
+import Modalka from '../Modalka/Modalka'
 
+export default function Card({ name, price, id }) {
+  const product = catalog.find((product) => product.id === parseInt(id));
 
-export default function Card({name, price, id}) {
+  const [modalIsOpen, setModalIsopen] = useState(false);
+
+  function showModal() {
+    setModalIsopen(true);
+  }
+
+  function closeModal() {
+    setModalIsopen(false);
+  }
+
   return (
     <div className="card">
       <img src={Foto} alt="Product" className="foto" />
@@ -18,15 +34,31 @@ export default function Card({name, price, id}) {
             <img src={Heart} alt="" className="like_img" />
           </button>
           <button className="bag">
-              <img src={Bag} alt="" className="bag_icon" />
+            <img src={Bag} alt="" className="bag_icon" />
           </button>
-          <br /> 
-         
+          <br />
         </div>
-        
       </div>
-      <Link to={`${id}`} className="link">Смотреть</Link>
-      
+
+      {product.count == 0 ? (
+        <>
+          <button onClick={showModal}>
+            <Button title="Заказать" />
+          </button>
+          <Modal className="modal-okno" isOpen={modalIsOpen}>
+            <div>
+              <Modalka setModalIsopen={setModalIsopen} />
+              <button className="close-btn" onClick={closeModal}>
+                <Button title="Закрыть" />
+              </button>
+            </div>
+          </Modal>
+        </>
+      ) : (
+        <Link to={`${id}`} className="link">
+          В КОРЗИНУ
+        </Link>
+      )}
     </div>
   );
 }
