@@ -10,12 +10,16 @@ export default function Catalog() {
   const [query, setQuery] = useState("");
   const [sorting, setSorting] = useState("");
 
+  const [category, setCategory] = useState(0);
+
   function search(e) {
     setQuery(e.target.value);
   }
 
-  const filterProducts = catalog.filter((item) =>
-    item.name.toLowerCase().includes(query.toLowerCase())
+  const filterProducts = catalog.filter(
+    (item) =>
+      item.name.toLowerCase().includes(query.toLowerCase()) &&
+      (item.category == category || category == 0)
   );
 
   function sort(event) {
@@ -30,7 +34,7 @@ export default function Catalog() {
       case "price_desc":
         return [...catalog].sort((a, b) => b.price - a.price);
       case "count_desc":
-        return [...catalog].sort((a, b) => b.count - a.count );
+        return [...catalog].sort((a, b) => b.count - a.count);
       default:
         return catalog;
     }
@@ -45,18 +49,18 @@ export default function Catalog() {
         <p className="catalog_name">Главная \ Каталог</p>
         <br />
         <div className="filters">
-          <a href="" className="filter filter_black">
-            Всё
-          </a>
-          <a href="" className="filter">
+          <button className="filter" onClick={() => setCategory(0)}>
+            ВСЕ
+          </button>
+          <button className="filter" onClick={() => setCategory(1)}>
             Топ
-          </a>
-          <a href="" className="filter">
+          </button>
+          <button className="filter" onClick={() => setCategory(2)}>
             Низ
-          </a>{" "}
-          <a href="" className="filter">
+          </button>
+          <button className="filter" onClick={() => setCategory(3)}>
             Обувь
-          </a>
+          </button>
         </div>
         <br /> <br />
         <input
@@ -70,6 +74,7 @@ export default function Catalog() {
           <option value="price_desc">По убыванию цены</option>
           <option value="count_desc">Остаток по количеству</option>
         </select>
+        
         <br /> <br /> <br /> <br />
         <div className="cards">
           {sortAndFilterProducts.length ? (
