@@ -9,7 +9,7 @@ import {catalog} from '../../data'
 import Modal from 'react-modal';
 import Modalka from '../Modalka/Modalka'
 
-export default function Card({ name, price, id }) {
+export default function Card({ id, name, price, count}) {
   const product = catalog.find((product) => product.id === parseInt(id));
 
   const [modalIsOpen, setModalIsopen] = useState(false);
@@ -29,6 +29,7 @@ export default function Card({ name, price, id }) {
       <h3 className="name">{name}</h3>
       <div className="card_actions">
         <h2 className="price">{price} ₽</h2>
+        <p className="ostatok">{count} шт</p>
         <div className="actions">
           <button className="like">
             <img src={Heart} alt="" className="like_img" />
