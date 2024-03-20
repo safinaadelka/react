@@ -1,15 +1,15 @@
 import "././Card.css";
 import Heart from "/public/card/heart.png";
 import Bag from "/public/card/black_bag.png";
-import Button from '../../components/Button/Button'
+import Button from "../../components/Button/Button";
 import Foto from "/public/card/card_foto.jpg";
-import { Link, useParams } from 'react-router-dom'
-import React, { useState } from 'react';
-import {catalog} from '../../data'
-import Modal from 'react-modal';
-import Modalka from '../Modalka/Modalka'
+import { Link, useParams } from "react-router-dom";
+import React, { useState } from "react";
+import { catalog } from "../../data";
+import Modal from "react-modal";
+import Modalka from "../Modalka/Modalka";
 
-export default function Card({ id, name, price, count}) {
+export default function Card({ id, name, price, count, addCard }) {
   const product = catalog.find((product) => product.id === parseInt(id));
 
   const [modalIsOpen, setModalIsopen] = useState(false);
@@ -56,9 +56,14 @@ export default function Card({ id, name, price, count}) {
           </Modal>
         </>
       ) : (
-        <Link to={`${id}`} className="link">
-          В КОРЗИНУ
-        </Link>
+        <>
+          <button onClick={addCard}>В корзину
+      
+          </button>
+          <Link to={`${id}`}>
+            <Button title="Подробнее" />
+          </Link>
+        </>
       )}
     </div>
   );

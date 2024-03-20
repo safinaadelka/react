@@ -5,8 +5,9 @@ import Foto2 from "/public/card/foto2.png";
 import Foto3 from "/public/card/foto3.png";
 import { catalog } from "../../data";
 import { useState } from "react";
+import BasketPage from "../../Pages/BasketPage/BasketPage";
 
-export default function Catalog() {
+export default function Catalog({ addToBasket, basket }) {
   const [query, setQuery] = useState("");
   const [sorting, setSorting] = useState("");
 
@@ -74,12 +75,17 @@ export default function Catalog() {
           <option value="price_desc">По убыванию цены</option>
           <option value="count_desc">Остаток по количеству</option>
         </select>
-        
         <br /> <br /> <br /> <br />
         <div className="cards">
           {sortAndFilterProducts.length ? (
             sortAndFilterProducts.map((card, index) => {
-              return <Card key={index} {...card} />;
+              return (
+                <Card
+                  key={index}
+                  {...card}
+                  addCard={() => addToBasket([...basket, card.id])}
+                />
+              );
             })
           ) : (
             <h2>По запросу "{query}" ничего не найдено</h2>
